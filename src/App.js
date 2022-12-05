@@ -31,7 +31,8 @@ function App() {
 
   }
 
-  function clickHandler() {
+  function clickHandler(c) {
+    setEmojiMeaning(emojiDiectionary[c])
 
   }
 
@@ -49,7 +50,7 @@ function App() {
       {
         key.map(cu => {
           return (
-            <li onClick={clickHandler}>{cu}</li>
+            <li onClick={() => clickHandler(cu)}>{cu}</li>
           )
 
         })
