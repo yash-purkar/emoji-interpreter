@@ -1,24 +1,14 @@
 import { useState } from "react";
+import emojiDiectionary from './EmojiD'
 
 
 function App() {
   const [emojiMeaning, setEmojiMeaning] = useState();
 
-  const emojiDiectionary = {
-    "😋": "Face Savoring Food",
-    "🤪": "Zany Face",
-    "🤔": "Thinking Face",
-    "🥵": "Hot face",
-    "🥶": "Cold face",
-    "😕": "Confused face",
-    "😠": "Angry Face",
-    "😫": "Tired Face",
-    "🤧": "Sneezing Face"
-  }
 
   // Here we convert keys of emojiDiectionary in to an array.
   let key = Object.keys(emojiDiectionary);
-  console.log(key);
+  // console.log(key);
 
   function handleChange(e) {
     let userInput = e.target.value;
@@ -31,8 +21,9 @@ function App() {
 
   }
 
-  function clickHandler(c) {
-    setEmojiMeaning(emojiDiectionary[c])
+  function clickHandler(emoji) {
+    // It's like emojiDiectionary.value of emoji
+    setEmojiMeaning(emojiDiectionary[emoji])
 
   }
 
@@ -46,16 +37,15 @@ function App() {
       <h4>Meaning : {emojiMeaning}</h4>
       <button></button>
 
-      <p>emojies we have</p>
+      <h3>emojies we have</h3>
       {
-        key.map(cu => {
+        key.map((currElem, i) => {
           return (
-            <li onClick={() => clickHandler(cu)}>{cu}</li>
+            <span onClick={() => clickHandler(currElem)} key={i} style={{ padding: "5px", cursor: "pointer" }}>{currElem}</span>
           )
 
         })
       }
-
     </div>
   );
 }
