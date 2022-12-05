@@ -1,5 +1,6 @@
 import { useState } from "react";
 import emojiDiectionary from './EmojiD'
+import './App.css'
 
 
 function App() {
@@ -34,16 +35,19 @@ function App() {
       <input type="text" onChange={handleChange} />
       <h4>Meaning : {emojiMeaning}</h4>
       <h3>emojies we have</h3>
-      {
-        key.map((currElem, i) => {
-          return (
-            <span onClick={() => clickHandler(currElem)} key={i} style={{ padding: "5px", cursor: "pointer" }}>{currElem}</span>
-          )
+      <div className="emoji-container">
 
-        })
-      }
+        {
+          key.map((currElem, i) => {
+            return (
 
-      <h3 style={{ color: "gray" }}>Styling in progress</h3>
+              <span onClick={() => clickHandler(currElem)} key={i} className="emojies">{currElem}</span>
+            )
+
+          })
+        }
+      </div>
+
     </div>
   );
 }
