@@ -8,7 +8,16 @@ const emojiDiectionary = {
   "😕": "Confused face",
   "😠": "Angry Face",
   "😫": "Tired Face",
-  "🤧": "Sneezing Face"
+  "🤧": "Sneezing Face",
+  "🐕": "Dog",
+  "🦊": "Fox",
+  "🦁":"Lion",
+  "🐘" : "Elephant",
+  "🦇": "Bat",
+  "🐟":"Fish"
+
+ 
+
 }
 
 export default emojiDiectionary;
